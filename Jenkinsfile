@@ -30,7 +30,7 @@ pipeline {
         }
       steps{
         sh "wget http://ec2-18-218-59-2.us-east-2.compute.amazonaws.com/rectangle/jar/rectangle_${env.BUILD_NUMBER}.jar"
-        java -jar rectangle_${env.BUILD_NUMBER}.jar 4 5
+        sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 4 5"
         }
        }
 }
