@@ -9,7 +9,7 @@ pipeline {
     }
     stage('deploy'){
       steps{
-        sh "cp dist/rectangle.jar /var/www/html/rectangle/jar/"
+        sh "cp dist/rectangle_${BUILD_NUMBER}.jar /var/www/html/rectangle/jar/"
        }
   }
 }
