@@ -24,7 +24,7 @@ pipeline {
        }
 
   }
-    stage('docker"){
+    stage('docker'){
       agent{
         docker  'openjdk:8u151-jre-alpine'
         }
