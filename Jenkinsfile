@@ -61,7 +61,6 @@ pipeline {
          echo "Master checkout"
          sh 'git pull origin'
          sh 'git checkout master'
-         sh "echo 'hi' >> test.txt"
          sh "git merge development"
          sh 'git commit -am "checkout"'
          echo "Push"
