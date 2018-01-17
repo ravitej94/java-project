@@ -37,6 +37,9 @@ pipeline {
       agent{
         label 'app'
            }
+      when{
+        branch 'development'
+          }
       steps{
         sh "cp /var/www/html/rectangle/jar/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangle/blue/rectangle_${env.BUILD_NUMBER}.jar"
          }
