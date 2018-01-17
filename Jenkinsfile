@@ -29,7 +29,7 @@ pipeline {
         docker  'openjdk:8u151-jre-alpine'
         }
       steps{
-        sh "wget http://ec2-18-218-59-2.us-east-2.compute.amazonaws.com/rectangle/jar/rectangle_${env.BUILD_NUMBER}.jar"
+        sh "wget http://ec2-18-216-180-183.us-east-2.compute.amazonaws.com/rectangle/jar/rectangle_${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 4 5"
         }
        }
