@@ -33,5 +33,13 @@ pipeline {
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 4 5"
         }
        }
+    stage('promote to blue'){
+      agent{
+        label 'app'
+           }
+      steps{
+        sh cp /var/www/html/rectangle/jar/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangle/blue/rectangle_${env.BUILD_NUMBER}.jar
+         }
+      }
 }
 }
