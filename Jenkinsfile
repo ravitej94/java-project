@@ -38,11 +38,32 @@ pipeline {
         label 'app'
            }
       when{
-        branch 'development'
+        branch 'master'
           }
       steps{
         sh "cp /var/www/html/rectangle/jar/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangle/blue/rectangle_${env.BUILD_NUMBER}.jar"
          }
       }
+    stage('promote to master')
+       {
+      agent{
+        label 'app'
+          }
+       when{
+        branch 'development'
+      }
+       steps{
+         echo "git stash"
+         sh 'git stash'
+         echo "Devlopment checkout"
+         sh 'git checkout development'
+         echo "Master checkout"
+         sh 'git checkout master'
+         echo "merging dev"
+         sh 'git merge development'
+         echo "Push"
+         sh 'git push origin master'
+       }
+       }
 }
 }
