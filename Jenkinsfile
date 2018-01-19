@@ -70,6 +70,7 @@ pipeline {
          echo "status"
          sh "git status"
          echo "Push"
+         sh 'git pull origin'
          sh 'git push origin master'
        }
        }
