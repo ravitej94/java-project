@@ -59,7 +59,7 @@ pipeline {
          echo "Devlopment checkout"
          sh 'git checkout development'
          echo 'pulling origin'
-         sh 'git pull origin
+         sh 'git pull origin'
          echo "Master checkout"
          sh 'git checkout master'
          echo "add to master"
