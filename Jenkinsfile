@@ -60,9 +60,8 @@ pipeline {
          sh 'git checkout development'
          echo 'pulling origin'
          sh 'git pull origin'
-         sh 'git rm --cached'
          echo "Master checkout"
-         sh 'git checkout master'
+         sh 'git checkout -f master'
          echo "add to master"
          sh 'git status'
          sh "git add ."
