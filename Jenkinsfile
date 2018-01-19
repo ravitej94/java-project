@@ -20,7 +20,7 @@ pipeline {
        label 'app'
        }
       steps{
-        sh "if ![ -d '/var/www/html/rectangles/jar/${env.BRANCH_NAME}' ]; then mkdir /var/www/html/rectangles/jar/${env.BRANCH_NAME}; fi"
+        sh "if ![ -d '/var/www/html/rectangle/jar/${env.BRANCH_NAME}' ]; then mkdir /var/www/html/rectangle/jar/${env.BRANCH_NAME}; fi"
         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangle/jar/${env.BRANCH_NAME}/"
        }
 
@@ -30,7 +30,7 @@ pipeline {
         docker  'openjdk:8u151-jre-alpine'
         }
       steps{
-        sh "wget http://ec2-13-58-138-73.us-east-2.compute.amazonaws.com/rectangle/jar/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
+        sh "wget http://ec2-18-218-206-113.us-east-2.compute.amazonaws.com/rectangle/jar/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 4 5"
         }
        }
