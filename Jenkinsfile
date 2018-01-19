@@ -20,7 +20,7 @@ pipeline {
        label 'app'
        }
       steps{
-        sh "if ![ -d '/var/www/html/rectangle/jar/${env.BRANCH_NAME}' ]; then mkdir /var/www/html/rectangle/jar/${env.BRANCH_NAME}; fi"
+        sh "mkdir /var/www/html/rectangle/jar/${env.BRANCH_NAME}"
         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangle/jar/${env.BRANCH_NAME}/"
        }
 
