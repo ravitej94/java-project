@@ -71,7 +71,7 @@ pipeline {
          sh "git status"
          echo "Push"
          sh 'git pull origin'
-         sh 'git remote https://github.com/ravitej94/java-project origin git@github.com:ravitej94/java-project.git'
+         sh 'git remote set-url origin git@github.com:ravitej94/java-project.git'
          sh 'git push origin master'
        }
        }
