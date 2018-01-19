@@ -66,6 +66,8 @@ pipeline {
          sh "git add ."
          echo "commit to new files"
          sh 'git commit -am "checkout"'
+         echo "status"
+         sh "git status"
          echo "Push"
          sh 'git push origin master'
        }
