@@ -58,10 +58,12 @@ pipeline {
          sh 'git stash'
          echo "Devlopment checkout"
          sh 'git checkout development'
+         echo 'pulling origin'
+         sh 'git pull origin
          echo "Master checkout"
          sh 'git checkout master'
-         sh 'git pull origin'
          echo "add to master"
+         sh 'git status'
          sh "git add ."
          echo "commit to new files"
          sh 'git commit -am "checkout"'
