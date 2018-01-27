@@ -15,5 +15,13 @@ pipeline {
           }
       }
     }
+
+    stage('deploy'){
+      agent{
+       label 'app'
+       }
+      steps{
+        sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangle/jar/"
+       }
    }
   }
